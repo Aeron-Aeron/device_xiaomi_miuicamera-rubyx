@@ -3,5 +3,7 @@ allow platform_app vendor_camera_data_file:file { getattr open read };
 
 allow platform_app app_data_file:file execute;
 
+allow platform_app proc_stat:file r_file_perms;
+
 # Properties
 get_prop(platform_app, vendor_camera_prop)
