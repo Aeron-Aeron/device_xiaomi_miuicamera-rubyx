@@ -78,6 +78,9 @@ function blob_fixup() {
         *)
             return 1
             ;;
+        system/priv-app/MiuiCamera/MiuiCamera.apk)
+            apktool_patch "${2}" "$MY_DIR/patches"
+            ;;
     esac
 
     return 0
