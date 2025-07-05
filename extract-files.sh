@@ -71,13 +71,13 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --add-needed "libgui_shim_miuicamera.so" "${2}"
             ;;
-        system_ext/lib64/vendor.mediatek.hardware.camera.isphal-V1-ndk.so)
+	system_ext/lib64/vendor.mediatek.hardware.camera.isphal-V1-ndk.so)
             [ "$2" = "" ] && return 0
-            "${PATCHELF}" --replace-needed "android.hardware.graphics.common-V4-ndk.so" "android.hardware.graphics.common-V6-ndk.so" "${2}"
+            "${PATCHELF}" --replace-needed "android.hardware.graphics.common-V5-ndk.so" "android.hardware.graphics.common-V6-ndk.so" "${2}"
             ;;
         *)
-            return 1
-            ;;
+	    return 1
+	    ;;
         system/priv-app/MiuiCamera/MiuiCamera.apk)
             apktool_patch "${2}" "$MY_DIR/patches"
             ;;
